@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Zoom Away Rentals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #00796b;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border: 2px solid #00796b;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+        select {
+            font-size: 1rem;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #00796b;
+            text-decoration: none;
+        }
+        .login-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Create an Account</h1>
+    <form action="/submit-registration" method="POST">
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Create a password">
+
+        <label for="car-preference">Car Preference:</label>
+        <select id="car-preference" name="car-preference" required>
+            <option value="">Select your preferred car type</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="sports">Sports Car</option>
+            <option value="truck">Truck</option>
+        </select>
+
+        <input type="submit" value="Register Now">
+    </form>
+
+    <a href="loing page.html" class="login-link">Already have an account? Login here</a>
+</div>
+
+</body>
+</html>

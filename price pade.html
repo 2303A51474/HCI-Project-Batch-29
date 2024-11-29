@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Price Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+        label, .submit-btn {
+            display: block;
+            margin-top: 15px;
+            width: 100%;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Car Rental Price</h1>
+
+    <label for="car-name">Select Car:</label>
+    <select id="car-name">
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Sports Car">Sports Car</option>
+        <option value="Truck">Truck</option>
+    </select>
+
+    <label for="hours">Enter Rental Hours:</label>
+    <input type="number" id="hours" placeholder="Rental Hours" required>
+
+    <label for="kilometers">Enter Kilometers Driven:</label>
+    <input type="number" id="kilometers" placeholder="Kilometers Driven" required>
+
+    <button class="submit-btn" onclick="calculatePrice()">Calculate Price</button>
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function calculatePrice() {
+        const carName = document.getElementById('car-name').value;
+        const hours = parseFloat(document.getElementById('hours').value);
+        const kilometers = parseFloat(document.getElementById('kilometers').value);
+
+        const pricing = {
+            Sedan: { baseRate: 50, hourlyRate: 10, kilometerRate: 0.25 },
+            SUV: { baseRate: 70, hourlyRate: 15, kilometerRate: 0.35 },
+            'Sports Car': { baseRate: 120, hourlyRate: 25, kilometerRate: 0.6 },
+            Truck: { baseRate: 90, hourlyRate: 20, kilometerRate: 0.45 }
+        };
+
+        const selectedCar = pricing[carName];
+
+        if (!selectedCar || isNaN(hours) || isNaN(kilometers) || hours <= 0 || kilometers < 0) {
+            document.getElementById('result').innerHTML = 'Please enter valid values.';
+            return;
+        }
+
+        const hoursCharge = hours * selectedCar.hourlyRate;
+        const kilometersCharge = kilometers * selectedCar.kilometerRate;
+        const totalPrice = selectedCar.baseRate + hoursCharge + kilometersCharge;
+
+        window.location.href = nextpage.html?carName=${carName}&baseRate=${selectedCar.baseRate}&hoursCharge=${hoursCharge.toFixed(2)}&kilometersCharge=${kilometersCharge.toFixed(2)}&totalPrice=${totalPrice.toFixed(2)};
+    }
+</script>
+
+</body>
+</html>

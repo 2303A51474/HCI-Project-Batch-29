@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Zoom Away Rentals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e90ff, #ff6347); /* Beautiful gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+        .message-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+            color: #333;
+            animation: slideUp 1s ease-in-out;
+        }
+        h1 {
+            color: #ff6347;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: #555;
+            line-height: 1.5;
+        }
+        .thank-you-btn {
+            margin-top: 20px;
+            padding: 15px 25px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 99, 71, 0.5);
+        }
+        .thank-you-btn:hover {
+            background-color: #e55347;
+            transform: scale(1.1);
+        }
+        .thank-you-btn:focus {
+            outline: none;
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="message-container">
+    <h1>Thank You for Visiting Zoom Away Rentals!</h1>
+    <p>We are grateful for your trust in us. Your experience is important, and we hope to welcome you back soon. Enjoy your next adventure!</p>
+    <button class="thank-you-btn" onclick="window.location.href='index.html'">Return to Homepage</button>
+</div>
+
+</body>
+</html>

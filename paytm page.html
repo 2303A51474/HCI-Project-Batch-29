@@ -1,0 +1,151 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            font-size: 1.8em;
+            color: #0033cc;
+            margin: 0 0 20px;
+        }
+        .payment-method {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .payment-method h3 {
+            margin: 0 0 15px;
+            font-size: 1.3em;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], input[type="date"], input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background-color: #0033cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #002499;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Select Payment Method</h1>
+
+    <!-- Credit Card Payment Option -->
+    <div class="payment-method">
+        <h3>Credit Card</h3>
+        <div class="input-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="Enter your card number" maxlength="16">
+        </div>
+        <div class="input-group">
+            <label for="card-holder">Card Holder's Name</label>
+            <input type="text" id="card-holder" placeholder="Enter name as on card">
+        </div>
+        <div class="input-group">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="date" id="expiry-date">
+        </div>
+        <div class="input-group">
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" maxlength="3" placeholder="Enter CVV">
+        </div>
+    </div>
+
+    <!-- Debit Card Payment Option -->
+    <div class="payment-method">
+        <h3>Debit Card</h3>
+        <div class="input-group">
+            <label for="debit-card-number">Card Number</label>
+            <input type="text" id="debit-card-number" placeholder="Enter your card number" maxlength="16">
+        </div>
+        <div class="input-group">
+            <label for="debit-card-holder">Card Holder's Name</label>
+            <input type="text" id="debit-card-holder" placeholder="Enter name as on card">
+        </div>
+        <div class="input-group">
+            <label for="debit-expiry-date">Expiry Date</label>
+            <input type="date" id="debit-expiry-date">
+        </div>
+        <div class="input-group">
+            <label for="debit-cvv">CVV</label>
+            <input type="password" id="debit-cvv" maxlength="3" placeholder="Enter CVV">
+        </div>
+    </div>
+
+    <!-- UPI Payment Option -->
+    <div class="payment-method">
+        <h3>UPI</h3>
+        <div class="input-group">
+            <label for="upi-id">UPI ID</label>
+            <input type="text" id="upi-id" placeholder="Enter your UPI ID">
+        </div>
+    </div>
+
+    <!-- Net Banking Payment Option -->
+    <div class="payment-method">
+        <h3>Net Banking</h3>
+        <div class="input-group">
+            <label for="bank-name">Bank Name</label>
+            <select id="bank-name">
+                <option value="sbi">State Bank of India</option>
+                <option value="hdfc">HDFC Bank</option>
+                <option value="icici">ICICI Bank</option>
+                <option value="axis">Axis Bank</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn">Proceed to Pay</button>
+</div>
+
+</body>
+</html>
+

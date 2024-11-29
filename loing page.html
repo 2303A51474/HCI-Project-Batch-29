@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Zoom Away Rentals Cars</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #7b6ef7, #f7aaf7);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login-container h2 {
+            text-align: center;
+            color: #4C4C4C;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-size: 14px;
+            color: #6A6A6A;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #DDD;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+        .form-group input:focus {
+            border-color: #7b6ef7;
+            outline: none;
+        }
+        .form-group input[type="submit"] {
+            background-color: #7b6ef7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            padding: 12px 0;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #f7aaf7;
+        }
+        .form-group a {
+            text-decoration: none;
+            color: #7b6ef7;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .form-group a:hover {
+            color: #f7aaf7;
+        }
+        .form-group .terms {
+            font-size: 12px;
+            text-align: center;
+            color: #6A6A6A;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login to Zoom Away Rentals Cars</h2>
+        <form action="login_process.php" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login">
+            </div>
+
+            <div class="form-group">
+                <a href="#">Forgot Password?</a>
+            </div>
+            
+            <div class="form-group terms">
+                <p>By logging in, you agree to our <a href="#">Terms of Service</a>.</p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
